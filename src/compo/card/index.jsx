@@ -5,8 +5,8 @@ const Card = ()=> {
 
   return (
 
-    <div class="flex  bg-amber-400 gap-12 space-x-140 h-13 justify-center align-middle">
-      <form >
+    <div class= " flex bg-amber-300  justify-between h-13">
+      
       <div class="ml-4 text-3xl">
         <a ><Link to={"/logo"} element="logo"> logo</Link></a>
        
@@ -22,7 +22,7 @@ const Card = ()=> {
         <button class="bg-amber-200 border-0 w-15 h-10"><Link to={"/"} element={"login"}>login</Link></button>
         <button>signup</button>
       </div>
-      </form>
+      
     </div>
   )
 }

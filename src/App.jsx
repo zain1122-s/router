@@ -6,34 +6,37 @@ import Home from './compo/home'
 import About from './compo/about'
 import Logo from './compo/logo'
 import Login from './login'
+import Navbar from './compo/navbar'
 function App() {
   
 const [loggedIn, setLoggedIn]=useState(false);
-
+const [message, setMessage]= useState("")
 
 
 
 const loginForm = useCallback((email, password)=>{
   if (email === "example@gmail.com" && password=== "12345") {
     setLoggedIn(true);
-    
+    return true
   }else {
-    steMessage("invalid password")
+    setMessage("invalid password")
+    return false
   }
 }, [])
 
   return (
     <>
-    
-    {/* <Card/> */}
+    {loggedIn && <Card/>}
+
     <Routes>
-    {/* <Route path="/" element={<Button />} /> */}
+  
     <Route path='/home' element={<Home/>}/>
     <Route path='/about' element={<About/>}/>
     <Route path='/logo' element={<Logo/>}/>
      <Route path='/' element={<Login loggedIn={loginForm} />}/>
    
   </Routes>
+  {message && <p>{message}</p>}
 
   
   
