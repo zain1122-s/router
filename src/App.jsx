@@ -7,6 +7,7 @@ import About from './compo/about'
 import Logo from './compo/logo'
 import Login from './login'
 import Navbar from './compo/navbar'
+import Services from './compo/services'
 function App() {
   
 const [loggedIn, setLoggedIn]=useState(false);
@@ -31,10 +32,11 @@ const loginForm = useCallback((email, password)=>{
     <Routes>
   
     <Route path='/home' element={<Home/>}/>
-    <Route path='/about' element={<About/>}/>
+    {/* <Route path='/about' element={<About/>}/> */}
     <Route path='/logo' element={<Logo/>}/>
      <Route path='/' element={<Login loggedIn={loginForm} />}/>
-   
+     <Route path='/about' element={<About/>}/>
+     <Route path='/services' element={<Services/>}/>
   </Routes>
   {message && <p>{message}</p>}
 
